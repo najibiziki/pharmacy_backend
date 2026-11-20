@@ -3,6 +3,11 @@ const cors = require("cors");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
 
+const connectDB = require("./config/db");
+connectDB().catch((err) =>
+  console.error("MongoDB connection failed:", err.message),
+);
+
 const osmRoutes = require("./routes/osmRoutes");
 const authRoutes = require("./routes/authRoutes");
 const claimRoutes = require("./routes/claims");
