@@ -13,7 +13,12 @@ app.use(helmet());
 
 app.use(
   cors({
-    origin: true,
+    origin: [
+      "https://pharmacy-frontend-fawn.vercel.app",
+      "http://localhost:5173",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
 
